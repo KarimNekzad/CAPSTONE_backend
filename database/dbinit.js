@@ -2,7 +2,7 @@ const Sequelize = require("sequelize")
 require("dotenv").config()
 
 // database name, username, pass
-const sequelize = new Sequelize("capstone", "your_username", "your_password", {
+const sequelize = new Sequelize("capstone", "postgres", "jkPivt", {
   host: process.env.localhost,
   dialect: "postgres",
 })
