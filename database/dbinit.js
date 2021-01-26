@@ -2,8 +2,8 @@ const Sequelize = require("sequelize")
 require("dotenv").config()
 
 // database name, username, pass
-const sequelize = new Sequelize("capstone", "your_username", "your_password", {
-  host: process.env.localhost,
+const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USER, process.env.DATABASE_PASS, {
+  host: "localhost",
   dialect: "postgres",
 })
 
