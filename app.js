@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-require("dotenv").config()
+require('dotenv').config()
 const cors = require('cors')
 
 // ensure express uses proper middleware
@@ -17,6 +17,7 @@ app.get('/', (req, res, next) => {
 })
 
 app.use('/api', require('./api'))
+app.use('/user', require('./user'))
 
 app.listen(8080, () => {
   console.log('Listening on port 8080. CAPSTONE.')
