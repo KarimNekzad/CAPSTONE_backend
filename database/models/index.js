@@ -1,8 +1,15 @@
-const db = require("../dbinit")
-const Character = require("./Character")
+const db = require('../dbinit')
+const Character = require('./Character')
+const User = require('./User')
 
-db.sequelize.sync({ alter: true })
+// association
+User.hasMany(Character)
+Character.belongsTo(User)
+
+// allows for changes in database
+db.sequelize.sync({ alter : true })
 
 module.exports = {
   Character,
+  User,
 }
