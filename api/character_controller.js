@@ -4,7 +4,7 @@ const models = require("../database/models");
 
 // GET -> Read all
 router.get("/", (req, res, next) => {
-	models.Character.findAll()
+	models.Character.findAll({where: {userId: null}})
 		.then((characters) => {
 			res.status(200).json({
 				message: "Got all characters!",
@@ -34,6 +34,7 @@ router.get("/user/:id", (req, res, next) => {
 			});
 		});
 });
+
 // GET -> Find One
 router.get("/:id", (req, res, next) => {
 	models.Character.findByPk(req.params.id)
