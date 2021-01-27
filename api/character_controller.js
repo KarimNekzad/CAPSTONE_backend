@@ -54,6 +54,7 @@ router.post('/', (req, res, next) => {
     int: req.body.int,
     wis: req.body.wis,
     cha: req.body.cha,
+    userId: req.body.userId,
   })
     .then((character) => {
       res.status(200).json({
