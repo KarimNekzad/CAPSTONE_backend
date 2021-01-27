@@ -36,9 +36,24 @@ router.get('/:id', (req, res, next) => {
 
 // POST -> Create
 router.post('/', (req, res, next) => {
+  console.log('req.body in post for character:', req.body)
   models.Character.create({
+    name: req.body.name,
     class: req.body.class,
     race: req.body.race,
+    gender: req.body.gender,
+    armorClass: req.body.armorClass,
+    speed: req.body.speed,
+    skill1: req.body.skill1,
+    skill2: req.body.skill2,
+    skill3: req.body.skill3,
+    skill4: req.body.skill4,
+    str: req.body.str,
+    dex: req.body.dex,
+    con: req.body.con,
+    int: req.body.int,
+    wis: req.body.wis,
+    cha: req.body.cha,
   })
     .then((character) => {
       res.status(200).json({
@@ -64,8 +79,22 @@ router.put('/:id', (req, res, next) => {
     }
 
     character.update({
+      name: req.body.name,
       class: req.body.class,
       race: req.body.race,
+      gender: req.body.gender,
+      armorClass: req.body.armorClass,
+      speed: req.body.speed,
+      skill1: req.body.skill1,
+      skill2: req.body.skill2,
+      skill3: req.body.skill3,
+      skill4: req.body.skill4,
+      str: req.body.str,
+      dex: req.body.dex,
+      con: req.body.con,
+      int: req.body.int,
+      wis: req.body.wis,
+      cha: req.body.cha,
     })
 
     character.save()
