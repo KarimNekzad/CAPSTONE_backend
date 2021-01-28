@@ -55,7 +55,8 @@ router.post('/sign-up', (req, res, next) => {
 })
 
 // user auth login
-router.get('/login', (req, res, next) => {
+router.post('/login', (req, res, next) => {
+  console.log('req.body in user login:', req.body)
   models.User.findOne({
     where: {
       username: req.body.username,

@@ -2,10 +2,15 @@ const Sequelize = require('sequelize')
 require('dotenv').config()
 
 // database name, username, pass
-const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USER, process.env.DATABASE_PASS, {
-  host: process.env.host,
-  dialect: 'postgres',
-})
+const sequelize = new Sequelize(
+  process.env.DATABASE_NAME,
+  process.env.DATABASE_USER,
+  process.env.DATABASE_PASS,
+  {
+    host: process.env.host,
+    dialect: 'postgres',
+  }
+)
 
 const testDatabase = async () => {
   try {
