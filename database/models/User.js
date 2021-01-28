@@ -6,11 +6,11 @@ const User = db.sequelize.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  password: {
+  email: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  email: {
+  password: {
     type: Sequelize.STRING,
     allowNull: false,
   },
