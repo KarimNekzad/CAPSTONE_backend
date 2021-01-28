@@ -79,6 +79,9 @@ router.get('/login', (req, res, next) => {
               (err, token) => {
                 res.status(200).json({
                   message: 'Authentication successful!',
+                  userId: user.id,
+                  username: user.username,
+                  email: user.email,
                   token,
                 })
               }

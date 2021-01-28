@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const models = require('../database/models')
+// user auth middleware
+const checkAuthMiddleware = require('../middleware/check-auth')
 
 // GET -> Read all
 router.get('/', (req, res, next) => {
@@ -18,6 +20,7 @@ router.get('/', (req, res, next) => {
       })
     })
 })
+
 // GET -> Read all for Users
 router.get('/user/:id', (req, res, next) => {
   models.Character.findAll({ where: { userId: req.params.id } })
@@ -34,6 +37,7 @@ router.get('/user/:id', (req, res, next) => {
       })
     })
 })
+
 // GET -> Find One
 router.get('/:id', (req, res, next) => {
   models.Character.findByPk(req.params.id)
@@ -52,7 +56,7 @@ router.get('/:id', (req, res, next) => {
 })
 
 // POST -> Create
-router.post('/', (req, res, next) => {
+router.post('/', checkAuthMiddleware.checkauth, (req, res, next) => {
   console.log('req.body in post for character:', req.body)
   models.Character.create({
     name: req.body.name,
