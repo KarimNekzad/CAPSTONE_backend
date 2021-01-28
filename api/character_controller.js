@@ -56,6 +56,7 @@ router.get('/:id', (req, res, next) => {
 })
 
 // POST -> Create
+// checkAuthMiddleware.checkauth <- middleware for auth if we want
 router.post('/', (req, res, next) => {
   console.log('req.body in post for character:', req.body)
   models.Character.create({
