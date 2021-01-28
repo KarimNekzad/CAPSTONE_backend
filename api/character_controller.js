@@ -6,7 +6,7 @@ const checkAuthMiddleware = require('../middleware/check-auth')
 
 // GET -> Read all
 router.get('/', (req, res, next) => {
-  models.Character.findAll()
+  models.Character.findAll({where: {userId : null}})
     .then((characters) => {
       res.status(200).json({
         message: 'Got all characters!',
