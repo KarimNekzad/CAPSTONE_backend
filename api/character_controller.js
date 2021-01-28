@@ -4,22 +4,7 @@ const models = require('../database/models')
 
 // GET -> Read all
 router.get('/', (req, res, next) => {
-  models.Character.findAll()
-    .then((characters) => {
-      res.status(200).json({
-        message: 'Got all characters!',
-        characters,
-      })
-    })
-    .catch((err) => {
-      res.status(500).json({
-        message: 'An error occured getting all characters.',
-        err,
-      })
-    })
-})
-router.get('/user/', (req, res, next) => {
-  models.Character.findAll({ where: { userId: null } })
+  models.Character.findAll({where: {userId : null}})
     .then((characters) => {
       res.status(200).json({
         message: 'Got all characters!',
