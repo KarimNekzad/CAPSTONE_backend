@@ -76,6 +76,9 @@ router.post('/', checkAuthMiddleware.checkauth, (req, res, next) => {
     int: req.body.int,
     wis: req.body.wis,
     cha: req.body.cha,
+    personalityTraits: req.body.personalityTraits,
+    flaws: req.body.flaws,
+    ideals: req.body.ideals,
     userId: req.body.userId,
   })
     .then((character) => {

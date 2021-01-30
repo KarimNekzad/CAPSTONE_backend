@@ -66,6 +66,18 @@ const Character = db.sequelize.define('character', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
+  personalityTraits: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  flaws: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  ideals: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
 })
 
 module.exports = Character
