@@ -14,7 +14,7 @@ app.use(cors())
 app.get('/', (req, res, next) => {
   res.status(200).json({
     message:
-      'On homepage capstone team kilo. Team: Yifeng Zheng, Karim Nekzad, YeukSing Chan, Alexander Petrovski. D&D Application Backend.',
+      'Dungeons & Dragons : Aerouant Backend Homepage.Team kilo: Yifeng Zheng, Karim Nekzad, YeukSing Chan, Alexander Petrovski.',
   })
 })
 
