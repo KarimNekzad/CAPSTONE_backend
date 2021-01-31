@@ -107,6 +107,7 @@ router.post('/', checkAuthMiddleware.checkauth, (req, res, next) => {
 
 // PUT -> Update
 router.put('/:id', (req, res, next) => {
+  console.log('req.body in chara put req:', req.body)
   models.Character.findByPk(req.params.id).then((character) => {
     if (!character) {
       res.status(404).json({
