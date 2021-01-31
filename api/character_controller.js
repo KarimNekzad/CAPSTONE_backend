@@ -80,11 +80,11 @@ router.post('/', checkAuthMiddleware.checkauth, (req, res, next) => {
     flaws: req.body.flaws,
     ideals: req.body.ideals,
     userId: req.body.userId,
-    // attacksAndSpellcasting: req.body.attacksAndSpellcasting,
-    // featuresAndTraits: req.body.featuresAndTraits,
-    // equipment: req.body.equipment,
-    // passiveWisdom: req.body.passiveWisdom,
-    // profAndLang: req.body.profAndLang,
+    bonds: req.body.bonds,
+    attacksAndSpellcasting: req.body.attacksAndSpellcasting,
+    featuresAndTraits: req.body.featuresAndTraits,
+    equipment: req.body.equipment,
+    profAndLang: req.body.profAndLang,
   })
     .then((character) => {
       res.status(200).json({
@@ -130,6 +130,11 @@ router.put('/:id', (req, res, next) => {
       flaws: req.body.flaws,
       ideals: req.body.ideals,
       userId: req.body.userId,
+      bonds: req.body.bonds,
+      attacksAndSpellcasting: req.body.attacksAndSpellcasting,
+      featuresAndTraits: req.body.featuresAndTraits,
+      equipment: req.body.equipment,
+      profAndLang: req.body.profAndLang,
       // attacksAndSpellcasting: req.body.attacksAndSpellcasting,
       // featuresAndTraits: req.body.featuresAndTraits,
       // equipment: req.body.equipment,

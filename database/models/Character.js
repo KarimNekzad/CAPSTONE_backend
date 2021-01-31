@@ -78,21 +78,25 @@ const Character = db.sequelize.define('character', {
     type: Sequelize.TEXT,
     allowNull: false,
   },
-  // attacksAndSpellcasting: {
-  //   type: Sequelize.TEXT
-  // },
-  // featuresAndTraits: {
-  //   type: Sequelize.TEXT
-  // },
-  // equipment: {
-  //   type: Sequelize.TEXT
-  // },
+  bonds: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  attacksAndSpellcasting: {
+    type: Sequelize.TEXT,
+  },
+  featuresAndTraits: {
+    type: Sequelize.TEXT,
+  },
+  equipment: {
+    type: Sequelize.TEXT,
+  },
   // passiveWisdom: {
-  //   tpye: Sequelize.INTEGER
+  //   tpye: Sequelize.INTEGER,
   // },
-  // profAndLang : {
-  //   type: Sequelize.TEXT
-  // }
+  profAndLang: {
+    type: Sequelize.TEXT,
+  },
 })
 
 module.exports = Character
