@@ -155,45 +155,45 @@ router.get('/', (req, res, next) => {
 //     })
 // })
 
-// // PUT -> Update
-// router.put('/:id', (req, res, next) => {
-//   models.User.findByPk(req.params.id).then((user) => {
-//     if (!user) {
-//       res.status(404).json({
-//         message: 'Could not find a user by that ID!',
-//       })
-//     }
+// PUT -> Update
+router.put('/update/:id', (req, res, next) => {
+  models.User.findByPk(req.params.id).then((user) => {
+    if (!user) {
+      res.status(404).json({
+        message: 'Could not find a user by that ID!',
+      })
+    }
 
-//     user.update({
-//       username: req.body.username,
-//       password: req.body.password,
-//       email: req.body.email,
-//     })
+    user.update({
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+    })
 
-//     user.save()
+    user.save()
 
-//     res.status(200).json({
-//       message: 'Successfully updated user!',
-//       user,
-//     })
-//   })
-// })
+    res.status(200).json({
+      message: 'Successfully updated user!',
+      user,
+    })
+  })
+})
 
-// // DELETE -> Delete
-// router.delete('/:id', (req, res, next) => {
-//   models.User.findByPk(req.params.id).then((user) => {
-//     if (!user) {
-//       res.status(404).json({
-//         message: 'Could not find a user by that ID!',
-//       })
-//     }
+// DELETE -> Delete
+router.delete('/delete:id', (req, res, next) => {
+  models.User.findByPk(req.params.id).then((user) => {
+    if (!user) {
+      res.status(404).json({
+        message: 'Could not find a user by that ID!',
+      })
+    }
 
-//     user.destroy()
+    user.destroy()
 
-//     res.status(200).json({
-//       message: 'Successfully deleted user!',
-//     })
-//   })
-// })
+    res.status(200).json({
+      message: 'Successfully deleted user!',
+    })
+  })
+})
 
 module.exports = router

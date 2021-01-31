@@ -4,6 +4,24 @@ const models = require('../database/models')
 // user auth middleware
 const checkAuthMiddleware = require('../middleware/check-auth')
 
+// GET -> Read all (True read all -> Get all characters: public or private)
+router.get('/trueGetAll', (req, res, next) => {
+  models.Character.findAll()
+    .then((characters) => {
+      res.status(200).json({
+        message: 'Got all characters! True get all (public and private)',
+        characters,
+      })
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message:
+          'An error occured getting all characters (true get all error).',
+        err,
+      })
+    })
+})
+
 // GET -> Read all
 router.get('/', (req, res, next) => {
   models.Character.findAll({ where: { userId: null } })
