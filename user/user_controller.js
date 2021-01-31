@@ -180,7 +180,7 @@ router.put('/update/:id', (req, res, next) => {
 })
 
 // DELETE -> Delete
-router.delete('/delete:id', (req, res, next) => {
+router.delete('/delete/:id', (req, res, next) => {
   models.User.findByPk(req.params.id).then((user) => {
     if (!user) {
       res.status(404).json({
