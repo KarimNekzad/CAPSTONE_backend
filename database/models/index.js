@@ -7,7 +7,7 @@ User.hasMany(Character)
 Character.belongsTo(User)
 
 // allows for changes in database
-db.sequelize.sync({ alter: true })
+db.sequelize.sync({ force: true })
 
 module.exports = {
   Character,
